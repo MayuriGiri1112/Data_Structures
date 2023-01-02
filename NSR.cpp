@@ -1,4 +1,4 @@
-//Nearest Greater to Left
+//Nearest Smaller to Right
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -10,7 +10,7 @@ int NGL(int arr[], int size)
 	
 	s.push(arr[0]);
 	
-	for (int i = 1; i < size; i++) 
+	for (int i=0; i<size; i++) 
 	{
         if (s.empty()) 
 		{
@@ -19,19 +19,19 @@ int NGL(int arr[], int size)
         }
 	}
 	
-	for(int i=0; i<size; i++)
+	for(int i=size-1; i>0; i--)
 	{
 		if(s.size()==0)
 		{
 			v.push_back(-1);
 		}
-		else if(s.size()>0 && s.top()>arr[i])
+		else if(s.size()>0 && s.top()<arr[i])
 		{
 			v.push_back(s.top());
 		}
-		else if(s.size()>0 && s.top()<=arr[i])
+		else if(s.size()>0 && s.top()>=arr[i])
 		{
-			while(s.size()>0 && s.top()<=arr[i])
+			while(s.size()>0 && s.top()>=arr[i])
 			{
 				s.pop();
 			}
@@ -47,6 +47,8 @@ int NGL(int arr[], int size)
 		s.push(arr[i]);
 	}
 	
+	reverse(v.begin(),v.end());
+	cout<<"\nOutput: ";
 	for(int i=0; i<size; i++)
 	{
 		cout<<v.at(i)<<" ";
