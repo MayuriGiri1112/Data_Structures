@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int NGL(int arr[], int size)
+int NSR(int arr[], int size)
 {
 	vector<int> v;
 	stack<int> s;
@@ -67,6 +67,6 @@ int main()
 	{
 		cin>>arr[i];
 	}
-	NGL(arr, n);
+	NSR(arr, n);
 	return 0;
 }

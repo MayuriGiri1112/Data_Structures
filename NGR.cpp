@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int NGL(int arr[], int size)
+int NGR(int arr[], int size)
 {
 	vector<int> v;
 	stack<int> s;
@@ -19,7 +19,7 @@ int NGL(int arr[], int size)
         }
 	}
 	
-	for(int i=size-1; i>0; i--)
+	for(int i=size-1; i>=0; i--)
 	{
 		if(s.size()==0)
 		{
@@ -67,6 +67,6 @@ int main()
 	{
 		cin>>arr[i];
 	}
-	NGL(arr, n);
+	NGR(arr, n);
 	return 0;
 }
