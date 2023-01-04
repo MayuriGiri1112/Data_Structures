@@ -10,14 +10,6 @@ int StockSpain(int arr[], int size)
 	
 	s.push(make_pair(arr[0], 0));
 	
-	for (int i = 1; i < size; i++) 
-	{
-        if (s.empty()) 
-		{
-            s.push(make_pair(arr[i], i));
-            continue;
-        }
-	}
 	
 	for(int i=0; i<size; i++)
 	{
@@ -44,7 +36,7 @@ int StockSpain(int arr[], int size)
 				v.push_back(s.top().second);
 			}
 		}
-		s.push({arr[i], i});
+		s.push(make_pair(arr[i], i));
 	}
 	
 	for(int i=0; i<v.size(); i++)
